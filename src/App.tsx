@@ -1,8 +1,11 @@
+import { MainContainer } from "./components/MainContainer"
+import { Title } from "./components/Title"
+
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <MainContainer>
+      <Title />
+    </MainContainer>
   )
 }
 
