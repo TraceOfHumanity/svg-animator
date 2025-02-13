@@ -22,15 +22,25 @@ function App() {
     }
   };
 
+  const generateAnimation = () => {
+    const totalFrames = svgs.length;
+    return svgs.map((svg, index) => {
+      const startTime = (index / totalFrames).toFixed(3);
+      const endTime = ((index + 1) / totalFrames).toFixed(3);
+      return `
+        <g id="group${index + 1}" opacity="0">${svg}</g>
+        <animate href="#group${index + 1}" attributeName="opacity" values="0;0;1;1;0;0" dur="1s" repeatCount="indefinite" keyTimes="0;${startTime};${startTime};${endTime};${endTime};1" fill="freeze"></animate>
+      `;
+    }).join('');
+  };
+
   return (
     <MainContainer>
       <Title />
       <input type="file" accept="image/svg+xml" multiple onChange={handleSvgUpload} />
-      <div>
-        {svgs.map((svg, index) => (
-          <div key={index} dangerouslySetInnerHTML={{ __html: svg }} />
-        ))}
-      </div>
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <g dangerouslySetInnerHTML={{ __html: generateAnimation() }} />
+      </svg>
     </MainContainer>
   );
 }
