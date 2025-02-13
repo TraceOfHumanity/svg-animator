@@ -22,17 +22,24 @@ function App() {
   const [svgs, setSvgs] = useState<{id: string, name: string, svg: string }[]>([]);
   const [animationDuration, setAnimationDuration] = useState("2s");
 
+  const sortSvgs = (items: { id: string, name: string, svg: string }[]) => {
+    return items.sort((a, b) => {
+      const numA = parseInt(a.name.split('.')[0], 10);
+      const numB = parseInt(b.name.split('.')[0], 10);
+      return numA - numB;
+    });
+  };
+
   const handleSvgUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
-      // const newSvgs: string[] = [];
       const newSvgs: { id: string, name: string, svg: string }[] = [];
       Array.from(files).forEach((file) => {
         const reader = new FileReader();
         reader.onload = (e) => {
           newSvgs.push({ id: uuidv4(), name: file.name, svg: e.target?.result as string });
           if (newSvgs.length === files.length) {
-            setSvgs((prevSvgs) => [...prevSvgs, ...newSvgs]);
+            setSvgs((prevSvgs) => sortSvgs([...prevSvgs, ...newSvgs]));
           }
         };
         reader.readAsText(file);
