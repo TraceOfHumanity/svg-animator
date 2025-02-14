@@ -16,10 +16,11 @@ import {
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { SvgItem } from "./components/SvgItem";
+import { FaUpload } from "react-icons/fa";
 
 
 function App() {
-  const [svgs, setSvgs] = useState<{id: string, name: string, svg: string }[]>([]);
+  const [svgs, setSvgs] = useState<{ id: string, name: string, svg: string }[]>([]);
   const [animationDuration, setAnimationDuration] = useState("2s");
 
   const sortSvgs = (items: { id: string, name: string, svg: string }[]) => {
@@ -78,8 +79,8 @@ function App() {
 
   const sortList = (
     items: { id: string, name: string, svg: string }[],
-    active: {id: UniqueIdentifier},
-    over: {id: UniqueIdentifier},
+    active: { id: UniqueIdentifier },
+    over: { id: UniqueIdentifier },
   ) => {
     const oldIndex = items.findIndex((item) => item.id === active.id);
     const newIndex = items.findIndex((item) => item.id === over.id);
@@ -88,7 +89,7 @@ function App() {
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
-    const {active, over} = event;
+    const { active, over } = event;
     if (!over) return;
 
     if (active.id !== over.id) {
@@ -103,7 +104,13 @@ function App() {
   return (
     <MainContainer>
       <Title />
-      <input type="file" accept="image/svg+xml" multiple onChange={handleSvgUpload} />
+      <div className="border-2 w-full min-h-40 border-dashed border-mainText backdrop-blur-3xl rounded-md hover:bg-slate-950/5 duration-200 relative">
+        <input className="w-full h-full opacity-0" type="file" accept="image/svg+xml" multiple onChange={handleSvgUpload} />
+        <div className="text-mainText text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+          <p>Drag and drop or click to select images</p>
+          <FaUpload className="text-2xl inline-block" />
+        </div>
+      </div>
       <input
         type="text"
         value={animationDuration}
