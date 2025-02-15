@@ -1,7 +1,6 @@
 import { MainContainer } from "./components/MainContainer";
 import { Title } from "./components/Title";
 import { saveAs } from "file-saver";
-import { v4 as uuidv4 } from 'uuid';
 import {
   DragEndEvent,
   UniqueIdentifier,
@@ -15,32 +14,7 @@ import { useAnimationGenerator } from "./hooks/useAnimationGenerator";
 
 
 function App() {
-  const {svgs, setSvgs, animationDuration, frameInterval, setAnimationDuration, setFrameInterval} = useAnimationGenerator()
-
-  const sortSvgs = (items: { id: string, name: string, svg: string }[]) => {
-    return items.sort((a, b) => {
-      const numA = parseInt(a.name.split('.')[0], 10);
-      const numB = parseInt(b.name.split('.')[0], 10);
-      return numA - numB;
-    });
-  };
-
-  const handleSvgUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      const newSvgs: { id: string, name: string, svg: string }[] = [];
-      Array.from(files).forEach((file) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          newSvgs.push({ id: uuidv4(), name: file.name, svg: e.target?.result as string });
-          if (newSvgs.length === files.length) {
-            setSvgs((prevSvgs) => sortSvgs([...prevSvgs, ...newSvgs]));
-          }
-        };
-        reader.readAsText(file);
-      });
-    }
-  };
+  const {svgs, setSvgs, animationDuration, frameInterval, setAnimationDuration, setFrameInterval, handleSvgUpload} = useAnimationGenerator()
 
   const generateAnimation = () => {
     const filteredSvgs = svgs.filter((_, index) => index % frameInterval === 0);
