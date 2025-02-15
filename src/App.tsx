@@ -1,6 +1,5 @@
 import { MainContainer } from "./components/MainContainer";
 import { Title } from "./components/Title";
-import { useState } from "react";
 import { saveAs } from "file-saver";
 import { v4 as uuidv4 } from 'uuid';
 import {
@@ -12,12 +11,11 @@ import { InputFiles } from "./components/InputFiles";
 import { AnimationDuration } from "./components/AnimationDuration";
 import { ListOfFrames } from "./components/ListOfFrames";
 import { FrameInterval } from "./components/FrameInterval";
+import { useAnimationGenerator } from "./hooks/useAnimationGenerator";
 
 
 function App() {
-  const [svgs, setSvgs] = useState<{ id: string, name: string, svg: string }[]>([]);
-  const [animationDuration, setAnimationDuration] = useState(2);
-  const [frameInterval, setFrameInterval] = useState(1);
+  const {svgs, setSvgs, animationDuration, frameInterval, setAnimationDuration, setFrameInterval} = useAnimationGenerator()
 
   const sortSvgs = (items: { id: string, name: string, svg: string }[]) => {
     return items.sort((a, b) => {
