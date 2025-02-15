@@ -11,11 +11,13 @@ import { arrayMove } from "@dnd-kit/sortable";
 import { InputFiles } from "./components/InputFiles";
 import { AnimationDuration } from "./components/AnimationDuration";
 import { ListOfFrames } from "./components/ListOfFrames";
+import { FrameInterval } from "./components/FrameInterval";
 
 
 function App() {
   const [svgs, setSvgs] = useState<{ id: string, name: string, svg: string }[]>([]);
-  const [animationDuration, setAnimationDuration] = useState("2s");
+  const [animationDuration, setAnimationDuration] = useState(2);
+  const [frameInterval, setFrameInterval] = useState(1);
 
   const sortSvgs = (items: { id: string, name: string, svg: string }[]) => {
     return items.sort((a, b) => {
@@ -43,8 +45,10 @@ function App() {
   };
 
   const generateAnimation = () => {
-    const totalFrames = svgs.length;
-    return svgs.map((svg, index) => {
+    const filteredSvgs = svgs.filter((_, index) => index % frameInterval === 0);
+    const totalFrames = filteredSvgs.length;
+
+    return filteredSvgs.map((svg, index) => {
       const startTime = (index / totalFrames).toFixed(3);
       const endTime = ((index + 1) / totalFrames).toFixed(3);
       return `
@@ -92,6 +96,7 @@ function App() {
       {svgs.length > 0 && (
         <>
           <AnimationDuration animationDuration={animationDuration} setAnimationDuration={setAnimationDuration} />
+          <FrameInterval frameInterval={frameInterval} setFrameInterval={setFrameInterval} svgs={svgs} />
           <ListOfFrames svgs={svgs} handleDragEnd={handleDragEnd} />
           <button className="flex items-center gap-2 w-fit ml-auto bg-black text-white rounded p-1" onClick={downloadSVG}>Download SVG</button>
           <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
