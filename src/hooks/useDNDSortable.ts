@@ -1,9 +1,7 @@
 import { DragEndEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
-import { useAnimationGenerator } from "./useAnimationGenerator";
 
-export const useDNDSortable = () => {
-  const { svgs, setSvgs } = useAnimationGenerator();
+export const useDNDSortable = (svgs: { id: string, name: string, svg: string }[], setSvgs: (svgs: { id: string, name: string, svg: string }[]) => void) => {
   
   const sortList = (
     items: { id: string, name: string, svg: string }[],

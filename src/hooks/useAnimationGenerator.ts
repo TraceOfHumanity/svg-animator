@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const useAnimationGenerator = () => {
   const [svgs, setSvgs] = useState<{ id: string, name: string, svg: string }[]>([]);
-  const [animationDuration, setAnimationDuration] = useState(2);
-  const [frameInterval, setFrameInterval] = useState(1);
+  const [animationDuration, setAnimationDuration] = useState<number>(1.5);
+  const [frameInterval, setFrameInterval] = useState<number>(1);
 
   const sortSvgs = (items: { id: string, name: string, svg: string }[]) => {
     return items.sort((a, b) => {
