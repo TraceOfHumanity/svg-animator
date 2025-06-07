@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { DragEndEvent } from "@dnd-kit/core";
-import { Svg } from "../types/svgAnimatorTypes";
+import { Svg } from "@/types/svgAnimatorTypes";
 
 export const SvgAnimatorContext = createContext<{
   svgs: Svg[];

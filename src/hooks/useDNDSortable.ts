@@ -1,6 +1,6 @@
 import { DragEndEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
-import { Svg } from "../types/svgAnimatorTypes";
+import { Svg } from "@/types/svgAnimatorTypes";
 
 export const useDNDSortable = (
   svgs: Svg[],

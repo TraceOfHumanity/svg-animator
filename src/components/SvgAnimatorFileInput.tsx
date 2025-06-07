@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FaUpload } from "react-icons/fa";
-import { SvgAnimatorContext } from "../context/SvgAnimatorContext";
+import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
 
 export const SvgAnimatorFileInput = () => {
   const { handleSvgUpload } = useContext(SvgAnimatorContext);

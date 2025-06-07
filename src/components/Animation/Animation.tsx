@@ -2,7 +2,7 @@ import { AnimationDuration } from "./AnimationDuration";
 import { FrameInterval } from "./AnimationFrameInterval";
 import { FramesList } from "./FramesList/FramesList";
 import { useContext } from "react";
-import { SvgAnimatorContext } from "../../context/SvgAnimatorContext";
+import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
 
 export const Animation = () => {
   const { svgs, generateAnimation } = useContext(SvgAnimatorContext);

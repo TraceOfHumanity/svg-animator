@@ -2,9 +2,9 @@ import { Animation } from "./Animation/Animation";
 import { SvgAnimatorDownloadSvgButton } from "./SvgAnimatorDownloadSvgButton";
 import { SvgAnimatorFileInput } from "./SvgAnimatorFileInput";
 import { Title } from "./SvgAnimatorTitle";
-import { useAnimationGenerator } from "../hooks/useAnimationGenerator";
-import { useDNDSortable } from "../hooks/useDNDSortable";
-import { SvgAnimatorContext } from "../context/SvgAnimatorContext";
+import { useAnimationGenerator } from "@/hooks/useAnimationGenerator";
+import { useDNDSortable } from "@/hooks/useDNDSortable";
+import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
 
 export const SvgAnimator = ({ children }: { children: React.ReactNode }) => {
   const {

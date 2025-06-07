@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SvgAnimatorContext } from "../../context/SvgAnimatorContext";
+import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
 
 export const FrameInterval = () => {
   const { frameInterval, setFrameInterval, svgs } =

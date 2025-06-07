@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { v4 as uuidv4 } from "uuid";
-import { Svg } from "../types/svgAnimatorTypes";
+import { Svg } from "@/types/svgAnimatorTypes";
 
 export const useAnimationGenerator = () => {
   const [svgs, setSvgs] = useState<Svg[]>([]);
