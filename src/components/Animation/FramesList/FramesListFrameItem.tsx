@@ -22,9 +22,11 @@ export const FramesListFrameItem = ({ id, svg, name }: FrameItemProps) => {
       ref={setNodeRef}
       className="flex flex-col gap-2 items-center flex-grow min-w-20 h-full overflow-hidden"
     >
-      <div className="flex-grow h-1 [&_svg]:w-full [&_svg]:h-full" dangerouslySetInnerHTML={{ __html: svg }} />
+      <div
+        className="flex-grow h-1 [&_svg]:w-full [&_svg]:h-full"
+        dangerouslySetInnerHTML={{ __html: svg }}
+      />
       <p className="h-10">{name}</p>
-      
     </div>
-  )
-}
+  );
+};

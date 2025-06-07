@@ -3,7 +3,10 @@ interface SvgAnimatorAnimationDurationProps {
   setAnimationDuration: (duration: number) => void;
 }
 
-export const SvgAnimatorAnimationDuration = ({ animationDuration, setAnimationDuration }: SvgAnimatorAnimationDurationProps) => {
+export const SvgAnimatorAnimationDuration = ({
+  animationDuration,
+  setAnimationDuration,
+}: SvgAnimatorAnimationDurationProps) => {
   return (
     <div className="flex items-center gap-2 w-fit ml-auto">
       <label htmlFor="animationDuration">Animation Duration:</label>
@@ -18,5 +21,5 @@ export const SvgAnimatorAnimationDuration = ({ animationDuration, setAnimationDu
         placeholder="Enter animation duration (e.g., 2)"
       />
     </div>
-  )
-}
+  );
+};

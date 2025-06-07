@@ -1,5 +1,3 @@
 export const Animation = () => {
-  return (
-    <div>Animation</div>
-  )
-}
+  return <div>Animation</div>;
+};

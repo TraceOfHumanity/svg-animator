@@ -1,8 +1,4 @@
-import {
-  DndContext,
-  closestCenter,
-  DragEndEvent,
-} from "@dnd-kit/core";
+import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
 import { restrictToHorizontalAxis } from "@dnd-kit/modifiers";
 import {
   SortableContext,
@@ -12,7 +8,7 @@ import { FramesListFrameItem } from "./FramesListFrameItem";
 import { FrameInterval } from "./FramesListFrameInterval";
 
 interface FramesListProps {
-  svgs: { id: string, svg: string, name: string }[];
+  svgs: { id: string; svg: string; name: string }[];
   handleDragEnd: (event: DragEndEvent) => void;
 }
 
@@ -29,12 +25,17 @@ export const FramesList = ({ svgs, handleDragEnd }: FramesListProps) => {
           strategy={horizontalListSortingStrategy}
         >
           {svgs.map((svg, index) => (
-            <FramesListFrameItem key={index} id={svg.id} svg={svg.svg} name={svg.name} />
+            <FramesListFrameItem
+              key={index}
+              id={svg.id}
+              svg={svg.svg}
+              name={svg.name}
+            />
           ))}
         </SortableContext>
       </DndContext>
     </div>
-  )
-}
+  );
+};
 
-FramesList.FrameInterval = FrameInterval
+FramesList.FrameInterval = FrameInterval;
