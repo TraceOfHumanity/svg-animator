@@ -1,14 +1,9 @@
-interface FrameIntervalProps {
-  frameInterval: number;
-  setFrameInterval: (interval: number) => void;
-  svgs: { id: string; name: string; svg: string }[];
-}
+import { useContext } from "react";
+import { SvgAnimatorContext } from "../SvgAnimator";
 
-export const FrameInterval = ({
-  frameInterval,
-  setFrameInterval,
-  svgs,
-}: FrameIntervalProps) => {
+export const FrameInterval = () => {
+  const { frameInterval, setFrameInterval, svgs } =
+    useContext(SvgAnimatorContext);
   return (
     <div className="flex items-center gap-2 w-fit ml-auto">
       <label htmlFor="frameInterval">Frame Interval:</label>

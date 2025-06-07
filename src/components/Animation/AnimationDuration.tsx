@@ -1,12 +1,9 @@
-interface AnimationDurationProps {
-  animationDuration: number;
-  setAnimationDuration: (duration: number) => void;
-}
+import { useContext } from "react";
+import { SvgAnimatorContext } from "../SvgAnimator";
 
-export const AnimationDuration = ({
-  animationDuration,
-  setAnimationDuration,
-}: AnimationDurationProps) => {
+export const AnimationDuration = () => {
+  const { animationDuration, setAnimationDuration } =
+    useContext(SvgAnimatorContext);
   return (
     <div className="flex items-center gap-2 w-fit ml-auto">
       <label htmlFor="animationDuration">Animation Duration:</label>
