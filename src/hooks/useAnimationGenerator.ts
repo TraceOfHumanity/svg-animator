@@ -30,6 +30,7 @@ export const useAnimationGenerator = () => {
         reader.readAsText(file);
       });
     }
+    console.log('handleSvgUpload', svgs)
   };
 
   const generateAnimation = () => {

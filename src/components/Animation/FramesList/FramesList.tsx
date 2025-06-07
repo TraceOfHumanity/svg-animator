@@ -8,14 +8,15 @@ import {
   SortableContext,
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { SvgItem } from "./SvgItem";
+import { FramesListFrameItem } from "./FramesListFrameItem";
+import { FrameInterval } from "./FramesListFrameInterval";
 
-interface ListOfFramesProps {
+interface FramesListProps {
   svgs: { id: string, svg: string, name: string }[];
   handleDragEnd: (event: DragEndEvent) => void;
 }
 
-export const ListOfFrames = ({ svgs, handleDragEnd }: ListOfFramesProps) => {
+export const FramesList = ({ svgs, handleDragEnd }: FramesListProps) => {
   return (
     <div className="flex gap-4 overflow-x-auto overflow-y-hidden min-h-56">
       <DndContext
@@ -28,10 +29,12 @@ export const ListOfFrames = ({ svgs, handleDragEnd }: ListOfFramesProps) => {
           strategy={horizontalListSortingStrategy}
         >
           {svgs.map((svg, index) => (
-            <SvgItem key={index} id={svg.id} svg={svg.svg} name={svg.name} />
+            <FramesListFrameItem key={index} id={svg.id} svg={svg.svg} name={svg.name} />
           ))}
         </SortableContext>
       </DndContext>
     </div>
   )
 }
+
+FramesList.FrameInterval = FrameInterval

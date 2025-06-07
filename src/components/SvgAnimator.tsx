@@ -1,3 +1,4 @@
+import { FramesList } from "./Animation/FramesList/FramesList";
 import { SvgAnimatorFileInput } from "./SvgAnimatorFileInput";
 import { Title } from "./SvgAnimatorTitle";
 
@@ -11,3 +12,4 @@ export const SvgAnimator = ({children}: {children: React.ReactNode}) => {
 
 SvgAnimator.Title = Title
 SvgAnimator.FileInput = SvgAnimatorFileInput
+SvgAnimator.FramesList = FramesList

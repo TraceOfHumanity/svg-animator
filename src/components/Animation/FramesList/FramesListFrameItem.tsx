@@ -2,17 +2,16 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { CSSProperties } from "react";
 
-interface SvgItemProps {
+interface FrameItemProps {
   id: string;
   svg: string;
   name: string;
 }
 
-export const SvgItem = ({ id, svg, name }: SvgItemProps) => {
+export const FramesListFrameItem = ({ id, svg, name }: FrameItemProps) => {
   const { attributes, listeners, setNodeRef, transform } = useSortable({ id });
   const style: CSSProperties = {
     transform: CSS.Transform.toString(transform),
-    // transition,
   };
 
   return (
@@ -25,6 +24,7 @@ export const SvgItem = ({ id, svg, name }: SvgItemProps) => {
     >
       <div className="flex-grow h-1 [&_svg]:w-full [&_svg]:h-full" dangerouslySetInnerHTML={{ __html: svg }} />
       <p className="h-10">{name}</p>
+      
     </div>
   )
 }
