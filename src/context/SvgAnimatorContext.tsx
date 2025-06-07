@@ -1,9 +1,10 @@
 import { createContext } from "react";
 import { DragEndEvent } from "@dnd-kit/core";
+import { Svg } from "../types/svgAnimatorTypes";
 
 export const SvgAnimatorContext = createContext<{
-  svgs: { id: string; name: string; svg: string }[];
-  setSvgs: (svgs: { id: string; name: string; svg: string }[]) => void;
+  svgs: Svg[];
+  setSvgs: (svgs: Svg[]) => void;
   animationDuration: number;
   setAnimationDuration: (duration: number) => void;
   frameInterval: number;
@@ -23,4 +24,4 @@ export const SvgAnimatorContext = createContext<{
   generateAnimation: () => "",
   downloadSVG: () => {},
   handleDragEnd: () => {},
-}); 
+});

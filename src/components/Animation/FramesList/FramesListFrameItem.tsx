@@ -1,14 +1,9 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { CSSProperties } from "react";
+import { Svg } from "../../../types/svgAnimatorTypes";
 
-interface FrameItemProps {
-  id: string;
-  svg: string;
-  name: string;
-}
-
-export const FramesListFrameItem = ({ id, svg, name }: FrameItemProps) => {
+export const FramesListFrameItem = ({ id, svg, name }: Svg) => {
   const { attributes, listeners, setNodeRef, transform } = useSortable({ id });
   const style: CSSProperties = {
     transform: CSS.Transform.toString(transform),
