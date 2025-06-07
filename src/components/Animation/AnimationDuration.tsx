@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SvgAnimatorContext } from "../SvgAnimator";
+import { SvgAnimatorContext } from "../../context/SvgAnimatorContext";
 
 export const AnimationDuration = () => {
   const { animationDuration, setAnimationDuration } =

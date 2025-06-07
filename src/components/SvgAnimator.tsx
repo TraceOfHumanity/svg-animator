@@ -1,35 +1,10 @@
-import { createContext } from "react";
 import { Animation } from "./Animation/Animation";
 import { SvgAnimatorDownloadSvgButton } from "./SvgAnimatorDownloadSvgButton";
 import { SvgAnimatorFileInput } from "./SvgAnimatorFileInput";
 import { Title } from "./SvgAnimatorTitle";
 import { useAnimationGenerator } from "../hooks/useAnimationGenerator";
-import { DragEndEvent } from "@dnd-kit/core";
 import { useDNDSortable } from "../hooks/useDNDSortable";
-
-export const SvgAnimatorContext = createContext<{
-  svgs: { id: string; name: string; svg: string }[];
-  setSvgs: (svgs: { id: string; name: string; svg: string }[]) => void;
-  animationDuration: number;
-  setAnimationDuration: (duration: number) => void;
-  frameInterval: number;
-  setFrameInterval: (interval: number) => void;
-  handleSvgUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  generateAnimation: () => string;
-  downloadSVG: () => void;
-  handleDragEnd: (event: DragEndEvent) => void;
-}>({
-  svgs: [],
-  setSvgs: () => {},
-  animationDuration: 1.5,
-  setAnimationDuration: () => {},
-  frameInterval: 1,
-  setFrameInterval: () => {},
-  handleSvgUpload: () => {},
-  generateAnimation: () => "",
-  downloadSVG: () => {},
-  handleDragEnd: () => {},
-});
+import { SvgAnimatorContext } from "../context/SvgAnimatorContext";
 
 export const SvgAnimator = ({ children }: { children: React.ReactNode }) => {
   const {
