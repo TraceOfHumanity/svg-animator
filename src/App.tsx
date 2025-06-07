@@ -1,4 +1,4 @@
-import { SvgAnimator } from './components/SvgAnimator';
+import {SvgAnimator} from './components/SvgAnimator'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <SvgAnimator.Animation />
       <SvgAnimator.DownloadSvgButton />
     </SvgAnimator>
-  );
+  )
 }
 
-export default App;
+export default App
