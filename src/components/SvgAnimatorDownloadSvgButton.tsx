@@ -1,0 +1,16 @@
+interface SvgAnimatorDownloadSvgButtonProps {
+  downloadSVG: () => void;
+}
+
+export const SvgAnimatorDownloadSvgButton = ({
+  downloadSVG,
+}: SvgAnimatorDownloadSvgButtonProps) => {
+  return (
+    <button
+      className="flex items-center gap-2 w-fit ml-auto bg-black text-white rounded p-1"
+      onClick={downloadSVG}
+    >
+      Download SVG
+    </button>
+  );
+};

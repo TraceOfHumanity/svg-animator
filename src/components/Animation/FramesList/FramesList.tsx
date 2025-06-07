@@ -5,7 +5,7 @@ import {
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { FramesListFrameItem } from "./FramesListFrameItem";
-import { FrameInterval } from "./FramesListFrameInterval";
+import { FrameInterval } from "../AnimationFrameInterval";
 
 interface FramesListProps {
   svgs: { id: string; svg: string; name: string }[];
