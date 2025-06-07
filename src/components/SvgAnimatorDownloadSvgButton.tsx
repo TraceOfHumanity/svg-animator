@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
+import { useContext } from 'react';
+import { SvgAnimatorContext } from '@/context/SvgAnimatorContext';
 
 export const DownloadSvgButton = () => {
   const { downloadSVG } = useContext(SvgAnimatorContext);

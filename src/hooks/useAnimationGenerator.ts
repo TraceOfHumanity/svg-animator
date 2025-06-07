@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { saveAs } from "file-saver";
-import { v4 as uuidv4 } from "uuid";
-import { Svg } from "@/types/svgAnimatorTypes";
+import { useState } from 'react';
+import { saveAs } from 'file-saver';
+import { v4 as uuidv4 } from 'uuid';
+import { Svg } from '@/types/svgAnimatorTypes';
 
 export const useAnimationGenerator = () => {
   const [svgs, setSvgs] = useState<Svg[]>([]);
@@ -10,8 +10,8 @@ export const useAnimationGenerator = () => {
 
   const sortSvgs = (items: { id: string; name: string; svg: string }[]) => {
     return items.sort((a, b) => {
-      const numA = parseInt(a.name.split(".")[0], 10);
-      const numB = parseInt(b.name.split(".")[0], 10);
+      const numA = parseInt(a.name.split('.')[0], 10);
+      const numB = parseInt(b.name.split('.')[0], 10);
       return numA - numB;
     });
   };
@@ -35,7 +35,7 @@ export const useAnimationGenerator = () => {
         reader.readAsText(file);
       });
     }
-    console.log("handleSvgUpload", svgs);
+    console.log('handleSvgUpload', svgs);
   };
 
   const generateAnimation = () => {
@@ -51,7 +51,7 @@ export const useAnimationGenerator = () => {
         <animate href="#group${index + 1}" attributeName="opacity" values="0;0;1;1;0;0" dur="${animationDuration}" repeatCount="indefinite" keyTimes="0;${startTime};${startTime};${endTime};${endTime};1" fill="freeze"></animate>
       `;
       })
-      .join("");
+      .join('');
   };
 
   const downloadSVG = () => {
@@ -60,8 +60,8 @@ export const useAnimationGenerator = () => {
         ${generateAnimation()}
       </svg>
     `;
-    const blob = new Blob([svgContent], { type: "image/svg+xml" });
-    saveAs(blob, "animated.svg");
+    const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+    saveAs(blob, 'animated.svg');
   };
 
   return {

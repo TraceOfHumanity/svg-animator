@@ -1,13 +1,13 @@
-import { DndContext, closestCenter } from "@dnd-kit/core";
-import { restrictToHorizontalAxis } from "@dnd-kit/modifiers";
+import { DndContext, closestCenter } from '@dnd-kit/core';
+import { restrictToHorizontalAxis } from '@dnd-kit/modifiers';
 import {
   SortableContext,
   horizontalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { FrameInterval } from "@/components/Animation/AnimationFrameInterval";
-import { useContext } from "react";
-import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
-import { FrameItem } from "./FramesListFrameItem";
+} from '@dnd-kit/sortable';
+import { FrameInterval } from '@/components/Animation/AnimationFrameInterval';
+import { useContext } from 'react';
+import { SvgAnimatorContext } from '@/context/SvgAnimatorContext';
+import { FrameItem } from './FramesListFrameItem';
 
 export const FramesList = () => {
   const { svgs, handleDragEnd } = useContext(SvgAnimatorContext);

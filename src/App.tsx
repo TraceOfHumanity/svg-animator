@@ -1,8 +1,6 @@
-import { SvgAnimator } from "./components/SvgAnimator";
-
+import { SvgAnimator } from './components/SvgAnimator';
 
 function App() {
-
   return (
     <SvgAnimator>
       <SvgAnimator.Title />

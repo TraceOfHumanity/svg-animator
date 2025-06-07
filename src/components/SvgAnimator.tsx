@@ -1,10 +1,10 @@
-import { Animation } from "./Animation/Animation";
-import { DownloadSvgButton } from "./SvgAnimatorDownloadSvgButton";
-import { FileInput } from "./SvgAnimatorFileInput";
-import { Title } from "./SvgAnimatorTitle";
-import { useAnimationGenerator } from "@/hooks/useAnimationGenerator";
-import { useDNDSortable } from "@/hooks/useDNDSortable";
-import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
+import { Animation } from './Animation/Animation';
+import { DownloadSvgButton } from './SvgAnimatorDownloadSvgButton';
+import { FileInput } from './SvgAnimatorFileInput';
+import { Title } from './SvgAnimatorTitle';
+import { useAnimationGenerator } from '@/hooks/useAnimationGenerator';
+import { useDNDSortable } from '@/hooks/useDNDSortable';
+import { SvgAnimatorContext } from '@/context/SvgAnimatorContext';
 
 export const SvgAnimator = ({ children }: { children: React.ReactNode }) => {
   const {

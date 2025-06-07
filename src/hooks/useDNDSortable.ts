@@ -1,11 +1,8 @@
-import { DragEndEvent, UniqueIdentifier } from "@dnd-kit/core";
-import { arrayMove } from "@dnd-kit/sortable";
-import { Svg } from "@/types/svgAnimatorTypes";
+import { DragEndEvent, UniqueIdentifier } from '@dnd-kit/core';
+import { arrayMove } from '@dnd-kit/sortable';
+import { Svg } from '@/types/svgAnimatorTypes';
 
-export const useDNDSortable = (
-  svgs: Svg[],
-  setSvgs: (svgs: Svg[]) => void,
-) => {
+export const useDNDSortable = (svgs: Svg[], setSvgs: (svgs: Svg[]) => void) => {
   const sortList = (
     items: { id: string; name: string; svg: string }[],
     active: { id: UniqueIdentifier },
