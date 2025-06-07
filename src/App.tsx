@@ -1,6 +1,4 @@
-import { MainContainer } from "./components/MainContainer";
-import { Title } from "./components/Title";
-import { InputFiles } from "./components/InputFiles";
+import { SvgAnimator } from "./components/SvgAnimator";
 import { AnimationDuration } from "./components/AnimationDuration";
 import { ListOfFrames } from "./components/ListOfFrames";
 import { FrameInterval } from "./components/FrameInterval";
@@ -13,9 +11,9 @@ function App() {
   const { handleDragEnd } = useDNDSortable(svgs, setSvgs)
 
   return (
-    <MainContainer>
-      <Title />
-      <InputFiles handleSvgUpload={handleSvgUpload} />
+    <SvgAnimator>
+      <SvgAnimator.Title />
+      <SvgAnimator.FileInput handleSvgUpload={handleSvgUpload} />
       {svgs.length > 0 && (
         <>
           <AnimationDuration animationDuration={animationDuration} setAnimationDuration={setAnimationDuration} />
@@ -27,7 +25,7 @@ function App() {
           </svg>
         </>
       )}
-    </MainContainer>
+    </SvgAnimator>
   )
 }
 
