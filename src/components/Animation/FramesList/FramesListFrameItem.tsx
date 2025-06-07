@@ -15,13 +15,13 @@ export const FrameItem = ({ id, svg, name }: Svg) => {
       {...listeners}
       style={style}
       ref={setNodeRef}
-      className="flex flex-col gap-2 items-center flex-grow min-w-20 h-full overflow-hidden"
+      className='flex flex-col gap-2 items-center flex-grow min-w-20 h-full overflow-hidden'
     >
       <div
-        className="flex-grow h-1 [&_svg]:w-full [&_svg]:h-full"
+        className='flex-grow h-1 [&_svg]:w-full [&_svg]:h-full'
         dangerouslySetInnerHTML={{ __html: svg }}
       />
-      <p className="h-10">{name}</p>
+      <p className='h-10'>{name}</p>
     </div>
   );
 };

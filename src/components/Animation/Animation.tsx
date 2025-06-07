@@ -6,15 +6,24 @@ import { SvgAnimatorContext } from '@/context/SvgAnimatorContext';
 
 export const Animation = () => {
   const { svgs, generateAnimation } = useContext(SvgAnimatorContext);
-  if (svgs.length === 0) return <div>No SVGs uploaded</div>;
+  if (svgs.length === 0)
+    return (
+      <div className='text-center pointer-events-none'>
+        List of SVGs is empty. Please upload some SVGs.
+      </div>
+    );
 
   return (
-    <div>
+    <div className='flex flex-col gap-1'>
       <Animation.Duration />
       <Animation.FrameInterval />
       <Animation.FramesList />
 
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className='w-56 mx-auto'
+        viewBox='0 0 512 512'
+        xmlns='http://www.w3.org/2000/svg'
+      >
         <g dangerouslySetInnerHTML={{ __html: generateAnimation() }} />
       </svg>
     </div>
