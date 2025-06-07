@@ -29,7 +29,9 @@ function App() {
         handleDragEnd={handleDragEnd}
         generateAnimation={generateAnimation}
       />
-      <SvgAnimator.DownloadSvgButton downloadSVG={downloadSVG} />
+      {svgs.length > 0 && (
+        <SvgAnimator.DownloadSvgButton downloadSVG={downloadSVG} />
+      )}
     </SvgAnimator>
   );
 }

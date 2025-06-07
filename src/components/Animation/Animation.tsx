@@ -22,6 +22,8 @@ export const Animation = ({
   handleDragEnd,
   generateAnimation,
 }: AnimationProps) => {
+  if (svgs.length === 0) return <div>No SVGs uploaded</div>;
+
   return (
     <div>
       <Animation.Duration
