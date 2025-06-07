@@ -4,10 +4,10 @@ import {
   SortableContext,
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { FramesListFrameItem } from "./FramesListFrameItem";
 import { FrameInterval } from "@/components/Animation/AnimationFrameInterval";
 import { useContext } from "react";
 import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
+import { FrameItem } from "./FramesListFrameItem";
 
 export const FramesList = () => {
   const { svgs, handleDragEnd } = useContext(SvgAnimatorContext);
@@ -23,7 +23,7 @@ export const FramesList = () => {
           strategy={horizontalListSortingStrategy}
         >
           {svgs.map((svg, index) => (
-            <FramesListFrameItem
+            <FramesList.FrameItem
               key={index}
               id={svg.id}
               svg={svg.svg}
@@ -37,3 +37,4 @@ export const FramesList = () => {
 };
 
 FramesList.FrameInterval = FrameInterval;
+FramesList.FrameItem = FrameItem;

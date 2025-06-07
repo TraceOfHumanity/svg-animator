@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { FaUpload } from "react-icons/fa";
 import { SvgAnimatorContext } from "@/context/SvgAnimatorContext";
 
-export const SvgAnimatorFileInput = () => {
+export const FileInput = () => {
   const { handleSvgUpload } = useContext(SvgAnimatorContext);
   return (
     <div className="border-2 w-full min-h-40 border-dashed border-mainText backdrop-blur-3xl rounded-md hover:bg-slate-950/5 duration-200 relative">
