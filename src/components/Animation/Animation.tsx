@@ -3,9 +3,10 @@ import {FrameInterval} from './AnimationFrameInterval'
 import {FramesList} from './FramesList/FramesList'
 import {useContext} from 'react'
 import {SvgAnimatorContext} from '@/context/SvgAnimatorContext'
+import {AnimationPreview} from './AnimationPreview'
 
 export const Animation = () => {
-  const {svgs, generateAnimation} = useContext(SvgAnimatorContext)
+  const {svgs} = useContext(SvgAnimatorContext)
   if (svgs.length === 0)
     return (
       <div className='text-center pointer-events-none'>
@@ -18,14 +19,7 @@ export const Animation = () => {
       <Animation.Duration />
       <Animation.FrameInterval />
       <Animation.FramesList />
-
-      <svg
-        className='w-56 mx-auto'
-        viewBox='0 0 512 512'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <g dangerouslySetInnerHTML={{__html: generateAnimation()}} />
-      </svg>
+      <Animation.Preview />
     </div>
   )
 }
@@ -33,3 +27,4 @@ export const Animation = () => {
 Animation.Duration = AnimationDuration
 Animation.FrameInterval = FrameInterval
 Animation.FramesList = FramesList
+Animation.Preview = AnimationPreview
