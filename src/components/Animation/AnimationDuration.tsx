@@ -1,9 +1,9 @@
-import {useContext} from 'react'
-import {SvgAnimatorContext} from '@/context/SvgAnimatorContext'
+import {useContext} from 'react';
+import {SvgAnimatorContext} from '@/context/SvgAnimatorContext';
 
 export const AnimationDuration = () => {
   const {animationDuration, setAnimationDuration} =
-    useContext(SvgAnimatorContext)
+    useContext(SvgAnimatorContext);
   return (
     <div className='flex items-center gap-2 w-fit ml-auto'>
       <label htmlFor='animationDuration'>Animation Duration:</label>
@@ -18,5 +18,5 @@ export const AnimationDuration = () => {
         placeholder='Enter animation duration (e.g., 2)'
       />
     </div>
-  )
-}
+  );
+};

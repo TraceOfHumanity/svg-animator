@@ -1,13 +1,16 @@
-import {DndContext, closestCenter} from '@dnd-kit/core'
-import {restrictToHorizontalAxis} from '@dnd-kit/modifiers'
-import {SortableContext, horizontalListSortingStrategy} from '@dnd-kit/sortable'
-import {FrameInterval} from '@/components/Animation/AnimationFrameInterval'
-import {useContext} from 'react'
-import {SvgAnimatorContext} from '@/context/SvgAnimatorContext'
-import {FrameItem} from './FramesListFrameItem'
+import {DndContext, closestCenter} from '@dnd-kit/core';
+import {restrictToHorizontalAxis} from '@dnd-kit/modifiers';
+import {
+  SortableContext,
+  horizontalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import {FrameInterval} from '@/components/Animation/AnimationFrameInterval';
+import {useContext} from 'react';
+import {SvgAnimatorContext} from '@/context/SvgAnimatorContext';
+import {FrameItem} from './FramesListFrameItem';
 
 export const FramesList = () => {
-  const {svgs, handleDragEnd} = useContext(SvgAnimatorContext)
+  const {svgs, handleDragEnd} = useContext(SvgAnimatorContext);
   return (
     <div className='flex gap-4 overflow-x-auto overflow-y-hidden min-h-56'>
       <DndContext
@@ -30,8 +33,8 @@ export const FramesList = () => {
         </SortableContext>
       </DndContext>
     </div>
-  )
-}
+  );
+};
 
-FramesList.FrameInterval = FrameInterval
-FramesList.FrameItem = FrameItem
+FramesList.FrameInterval = FrameInterval;
+FramesList.FrameItem = FrameItem;

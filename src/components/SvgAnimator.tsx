@@ -1,10 +1,10 @@
-import {Animation} from './Animation/Animation'
-import {DownloadSvgButton} from './SvgAnimatorDownloadSvgButton'
-import {FileInput} from './SvgAnimatorFileInput'
-import {Title} from './SvgAnimatorTitle'
-import {useAnimationGenerator} from '@/hooks/useAnimationGenerator'
-import {useDNDSortable} from '@/hooks/useDNDSortable'
-import {SvgAnimatorContext} from '@/context/SvgAnimatorContext'
+import {Animation} from './Animation/Animation';
+import {DownloadSvgButton} from './SvgAnimatorDownloadSvgButton';
+import {FileInput} from './SvgAnimatorFileInput';
+import {Title} from './SvgAnimatorTitle';
+import {useAnimationGenerator} from '@/hooks/useAnimationGenerator';
+import {useDNDSortable} from '@/hooks/useDNDSortable';
+import {SvgAnimatorContext} from '@/context/SvgAnimatorContext';
 
 export const SvgAnimator = ({children}: {children: React.ReactNode}) => {
   const {
@@ -17,8 +17,8 @@ export const SvgAnimator = ({children}: {children: React.ReactNode}) => {
     handleSvgUpload,
     generateAnimation,
     downloadSVG,
-  } = useAnimationGenerator()
-  const {handleDragEnd} = useDNDSortable(svgs, setSvgs)
+  } = useAnimationGenerator();
+  const {handleDragEnd} = useDNDSortable(svgs, setSvgs);
 
   return (
     <SvgAnimatorContext.Provider
@@ -39,10 +39,10 @@ export const SvgAnimator = ({children}: {children: React.ReactNode}) => {
         {children}
       </div>
     </SvgAnimatorContext.Provider>
-  )
-}
+  );
+};
 
-SvgAnimator.Title = Title
-SvgAnimator.FileInput = FileInput
-SvgAnimator.Animation = Animation
-SvgAnimator.DownloadSvgButton = DownloadSvgButton
+SvgAnimator.Title = Title;
+SvgAnimator.FileInput = FileInput;
+SvgAnimator.Animation = Animation;
+SvgAnimator.DownloadSvgButton = DownloadSvgButton;

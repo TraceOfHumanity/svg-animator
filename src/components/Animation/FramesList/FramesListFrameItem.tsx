@@ -1,13 +1,13 @@
-import {useSortable} from '@dnd-kit/sortable'
-import {CSS} from '@dnd-kit/utilities'
-import {CSSProperties} from 'react'
-import {Svg} from '@/types/svgAnimatorTypes'
+import {useSortable} from '@dnd-kit/sortable';
+import {CSS} from '@dnd-kit/utilities';
+import {CSSProperties} from 'react';
+import {Svg} from '@/types/svgAnimatorTypes';
 
 export const FrameItem = ({id, svg, name}: Svg) => {
-  const {attributes, listeners, setNodeRef, transform} = useSortable({id})
+  const {attributes, listeners, setNodeRef, transform} = useSortable({id});
   const style: CSSProperties = {
     transform: CSS.Transform.toString(transform),
-  }
+  };
 
   return (
     <div
@@ -23,5 +23,5 @@ export const FrameItem = ({id, svg, name}: Svg) => {
       />
       <p className='h-10'>{name}</p>
     </div>
-  )
-}
+  );
+};
